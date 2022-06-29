@@ -25,7 +25,7 @@
         </nav>
     </header>
 
-    <h2>a lean, mean, computing machine for realtime geospatial analytics</h2>
+    <h2>a lean, mean, computing machine for realtime geospatial interactions</h2>
 
     <br>
     
@@ -33,7 +33,7 @@
     <blockquote><i>The <a href="https://github.com/bt-maps/mappistmetrics/">mappist-metrics server</a> is a set of scripts and configuration files to run a powerful application server 
         for geofencing, counters, and timeseries data. It speaks HTTP, WebSockets, Server-Sent Events, RESP and it's <strong>FAST!</strong></i> </blockquote>
     
-    <a href="https://www.wtfpl.net/"><img src="wtfpl-badge-1.png" width="88" height="31" alt="WTFPL"></a>
+    <a href="https://choosealicense.com/licenses/wtfpl/"><img src="wtfpl-badge-1.png" width="88" height="31" alt="WTFPL"></a>
     <br>
 
     <p>It's perfect for-</p>
@@ -43,6 +43,7 @@
         <li>Realtime counting engines and leaderboards</li>
         <li>Timeseries storage and aggregation servers</li>
         <li>Publish-subscribe servers with notifications over websocket and SSE</li>
+        <li>Fast data ingestion for moving object data</li>
     </ul>
 
     
@@ -62,23 +63,65 @@
     </dl>
     <br>
 
-    <p>
-        For Lua scripting, I recommend <mark>ZeroBrane Studio</mark>, a lightweight Lua IDE with code completion, syntax highlighting, live coding, code analyzer, and debugging support <a href="https://studio.zerobrane.com/support">Download</a>
-    </p>
+    <table>
+        <caption>Lots of features - use the ones you need</caption>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Webhooks</td>
+                <td>Receive, store, and publish Tile38 webhooks (over WebSockets or SSE)</td>
+            </tr>
+            <tr>
+                <td>Subscribe to channels</td>
+                <td>Connect to on-demand geofence/roaming object channels for ephemeral notifications over WebSockets</td>
+            </tr>
+            <tr>
+                <td>Queryable time series </td>
+                <td>A range can be rolled up into buckets and aggregated</td>
+            </tr>
+            <tr>
+                <td>Counts</td>
+                <td>A live, scalable and easy to use counting solution for a wide range of scenarios</td>
+            </tr>
+            <tr>
+                <td>Leaderboard (Ordered Sets)</td>
+                <td>Save the counters data in order</td>
+            </tr>
+            <tr>
+                <td>Geofence Interactions</td>
+                <td>Store, manage, and read geofence interactions (ENTER and EXIT events) </td>
+            </tr>
+            <tr>
+                <td>Asset Geodata</td>
+                <td>Store and manage moving object and static geospatial features</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <h2>Basic set-up</h2>
+    <br>
+
+    <h2>Typical high-level implemenation:</h2>
 
     <ol>
-        <li>configure and set your geofences and notifications channels </li>
-        <li>configure your counters with the json-based config</li>
+        <li>configure and set your geofences, webhooks, and counters </li>
         <li>ingest your moving object data</li>
-        <li>retrieve your geospatial data, notifications, counters, raw and aggregated timeseries using the API and channels</li>
+        <li>retrieve your geospatial data, notifications, counters, raw and aggregated timeseries using the HTTP API and pub/sub endpoints</li>
     </ol>
-
 
     <br>
     <hr>
+
+    <blockquote><i>mappist-metrics server is not an out-of-the-box solution. Instead, we provide application walkthroughs to help solve a business problem. These tutorials cover set-up, configuration, and scripting. </i> </blockquote>
+    
     <br>
+    <p>
+        I recommend <mark>ZeroBrane Studio</mark> for scripting. It is a lightweight Lua IDE with code completion, syntax highlighting, live coding, code analyzer, and debugging support <a href="https://studio.zerobrane.com/support">Download</a>
+    </p>
 
     <img src="https://elements.xz.style/assets/fuji-daniel-hehn.jpg" alt="Mt. Fuji">
 
