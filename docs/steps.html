@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usage - mappist-metrics</title>
+    <meta name="description" content="A lean, mean geospatial computing machine">
+    <meta name="keywords" content="geospatial,redis,gis,postgis,tile38,RESP,maps,nginx">
+    <meta property="og:title" content="mappist-metrics">
+    <meta property="og:url" content="https://github.com/bt-maps/mappistmetrics/">
+    <meta property="og:description" content="A lean, mean geospatial computing machine">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://newcss.net/_assets/og.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/open-fonts@1.1.1/fonts/inter.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+    <link rel="stylesheet" href="boilerplate.css">
+</head>
+<body>
+    <header>
+        <h1>mappist-metrics</h1>
+        <nav>
+            <a href="index.html">Home</a> /
+            <a href="steps.html">Usage</a> /
+            <a href="https://github.com/bt-maps/mappistmetrics/">GitHub</a>
+        </nav>
+    </header>
+
+    <h1>Usage</h1>
+
+    <p>Here's how to start using mappist-metrics server (mms) in under 5 minutes.</p>
+   
+    <h3>Prerequisites:</h3>
+    <p>Before you start following this guide, you will need to install docker, <code>brew install make</code>,<code>brew install tile38</code>, and <code>brew install redis</code></p>
+
+    <h3>Docker container</h3>
+    <p>A Dockerfile is provided to build a Docker image of the server:</p>
+    <pre>docker build -t mms .</pre>
+    <p>Once the Docker image is built, start the container with the following command:</p>
+    <pre>docker run -it --rm -p 8080:8080 mms</pre>
+
+
+    <h3>Docker-Compose</h3>
+
+    <p>A docker-compose.yml file is also provided to orchestrate three containers: </p>
+    <ul>
+        <li>The mappist-metrics server (mms)- see above</li>
+        <li>Tile38 server</li>
+        <li>Redis server</li>
+    </ul>
+    <hr>
+    <img src="compose.png" alt="high level app diagram">
+    <hr>
+  
+    To start the environment, simply run :
+    <pre>docker-compose up -d --build</pre>
+    <blockquote>The Docker image of the mms API is built before start due to --build option.</blockquote>
+
+
+
+    <h2>3. Add content</h2>
+
+    <br>
+    <hr>
+    <br>
+
+    <p>Have any questions or run into an issue? I'm here to help. Feel free to open an issue on GitHub <a href="https://github.com/bt-maps/mappistmetrics/issues">here</a></a>.</p>
+
+
+</body>
+
+</html>

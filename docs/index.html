@@ -13,48 +13,47 @@
     <meta property="og:image" content="https://newcss.net/_assets/og.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/open-fonts@1.1.1/fonts/inter.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
-    <link rel="stylesheet" href="terminal.css">
+    <link rel="stylesheet" href="boilerplate.css">
 </head>
 <body>
     <header>
         <h1>mappist-metrics</h1>
         <nav>
-            <a href="https://github.com/bt-maps/mappistmetrics/">Home</a> /
-            <a href="https://github.com/bt-maps/mappistmetrics/">GitHub</a> / 
-            
+            <a href="index.html">Home</a> /
+            <a href="steps.html">Usage</a> /
+            <a href="https://github.com/bt-maps/mappistmetrics/">GitHub</a>
         </nav>
     </header>
+    <h4>A scriptable web platform for realtime, location-based metrics and data feeds.</h4>  <br>
+    <mark>Fast is the feature.</mark> Get your in-line analytics where the 'event' occurs, where the transaction takes place.
 
-    <h2>Instant metrics for realtime, location-based interactions</h2>
+    <br><br>
 
-    <br>
+    <blockquote>No complex framework to learn. The mappist-metrics server</a> 
+        is a set of scripts and configuration files to run a powerful application server 
+        for <mark>geofences, counters, and timeseries data.</mark> It speaks HTTP, WebSockets, 
+        Server-Sent Events, and RESP. <br>
+    </blockquote>
     
+    <p>Create either standalone pub/sub servers or HTTP API's that give new life to your existing 
+        map tile and feature servers with the help of its <mark>programmable proxy magic.</mark></p>
 
-    <blockquote><i>The <a href="https://github.com/bt-maps/mappistmetrics/">mappist-metrics server</a> is a set of scripts and configuration files to run a powerful application server 
-        for geofencing, counters, and timeseries data. It speaks HTTP, WebSockets, Server-Sent Events, RESP and it's <strong>FAST!</strong></i> </blockquote>
-    
-    <a href="https://choosealicense.com/licenses/wtfpl/"><img src="wtfpl-badge-1.png" width="88" height="31" alt="WTFPL"></a>
-    <br>
-
-    <p>It's perfect for applications that need low-latency and high-performance:</p>
-
+    <blockquote>
+        It is flexible and highly configurable. Use it to build:
     <ul>
-        <li>Building fast geospatial and timeseries APIs with Redis and Tile38</li>
-        <li>Realtime counting engines and leaderboards</li>
-        <li>Timeseries storage and aggregation</li>
+        <li>Fast geospatial and timeseries APIs with Redis, Tile38</li>
+        <li>Realtime counting engines, leaderboards, and API aggregation services</li>
         <li>Publish-subscribe servers with notifications over websocket and SSE</li>
-        <li>Fast data ingestion for your moving object data </li>
-        <li>Receiving and aggregating data from your company's transactional system (sales, etc.)</li>
+        <li>Fast data ingestion services for your moving object data or transactional system</li>
     </ul>
-
-    
+    </blockquote>  
+    <hr>
+    <img src="concept1.png" alt="high level app diagram">
     <br>
     <h2>Components</h2>
     <dl>
-        <dt><a href="https://openresty.org/en/"><mark>OpenResty</mark></a></dt>
-        <dd>Dynamic web platform based on NGINX and LuaJIT</dd>
-        <dt><a href="https://nchan.io"><mark>NCHAN</mark></a></dt>  
-        <dd>Scalable, flexible pub/sub server for the modern web</dd>
+        <dt><a href="https://openresty.org/en/"><mark>OpenResty</mark></a> / <a href="https://nchan.io"><mark>NCHAN</mark></a></dt>  </dt>
+        <dd>A dynamic web platform based on NGINX and LuaJIT, combined with a scalable, flexible pub/sub server built for the modern web</dd>
         <dt><a href="https://tile38.com"><mark>Tile38</mark></a></dt>
         <dd>Ultra fast geospatial database & geofencing server</dd>
         <dt><a href="https://redis.io"><mark>Redis</mark></a></dt>
@@ -63,78 +62,63 @@
         <dd>A powerful, dynamic and light-weight programming language</dd>
     </dl>
     <br>
+    <h2>Features</h2>
+    <details>
+        <summary>Publish/Subscribe Feeds</summary>
+        <p>Publishers send HTTP POST messages to channels with a certain channel id, and subscribers subscribed to those channels receive them.</p>
+    </details>
+    <details>
+        <summary>Tile38 Webhooks</summary>
+        <p>Receive, process, store, and publish Tile38 webhooks over a channel to subscribed clients.</p>
+    </details>
+    <details>
+        <summary>RESP Channels</summary>
+        <p>Subscribe to geofence (static and roaming) channels for ephemeral notifications over WebSockets</p>
+    </details> 
+    <details>
+        <summary>Counters </summary>
+        <p>A live, scalable and easy to use solution that can count any kind of action (geofence notification events, etc.)</p>
+    </details> 
+    <details>
+        <summary>Leaderboards</summary>
+        <p>Save the counters data in order and retrieve them through an API</p>
+    </details> 
+    <details>
+        <summary>Timeseries API</summary>
+        <p>Store your geofence event data as timeseries in Redis. A range can be rolled up into buckets and aggregated. Easily calculate geofence dwell times, etc.</p>
+    </details>
+    <details>
+        <summary>Simple HTTP Command API for Tile38</summary>
+        <p>Batch and single command mode. Manage your moving object and static geospatial features, and set geofences</p>
+    </details>
+  
 
-    <table>
-        <caption>Lots of features - use the ones you need</caption>
-        <thead>
-            <tr>
-                <th>Feature</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Webhooks</td>
-                <td>Receive, store, and publish Tile38 webhooks (over WebSockets or SSE)</td>
-            </tr>
-            <tr>
-                <td>Subscribe to channels</td>
-                <td>Connect to on-demand geofence/roaming object channels for ephemeral notifications over WebSockets</td>
-            </tr>
-            <tr>
-                <td>Queryable time series </td>
-                <td>A range can be rolled up into buckets and aggregated</td>
-            </tr>
-            <tr>
-                <td>Counting</td>
-                <td>A live, scalable and easy to use counting solution for a wide range of scenarios</td>
-            </tr>
-            <tr>
-                <td>Leaderboard (Ordered Sets)</td>
-                <td>Save the counters data in order</td>
-            </tr>
-            <tr>
-                <td>Geofence Interactions</td>
-                <td>Store, manage, and read geofence interactions (ENTER and EXIT events) </td>
-            </tr>
-            <tr>
-                <td>Asset Geodata</td>
-                <td>Store and manage moving object and static geospatial features</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <br>
-
-    <h2>Typical workflow:</h2>
+   <!--  <h2>Typical workflow:</h2>
 
     <ol>
         <li>configure and set your geofences, webhooks, and counters </li>
-        <li>ingest your moving object data</li>
+        <li>ingest your moving object position fix data</li>
         <li>retrieve your geospatial data, notifications, counters, raw and aggregated timeseries using the HTTP API and pub/sub endpoints</li>
     </ol>
 
-    <br>
+    <br> -->
     <hr>
 
-<!--     <blockquote><i>mappist-metrics server is not an out-of-the-box solution. We use scripting to glue together best-in-class tools 
+    <blockquote><i>mappist-metrics server is not an out-of-the-box solution. We use scripting to glue together best-in-class tools. 
+    The application is built on open source foundations
         (<a href="https://openresty.org/en/">OpenResty</a>,
         <a href="https://redis.io/">Redis</a>, 
-        <a href="https://tile38.com/">Tile38</a>) 
-        to build a low-latency, high-performance server.
-        
-    </i> </blockquote> -->
-    
-    <br>
+        <a href="https://tile38.com/">Tile38</a>, 
+        <a href="https://github.com/ccollie/redis-timeseries-lex">redis-timeseries-lex</a>)
+    </i> </blockquote>
     <p>
-        I recommend <mark>ZeroBrane Studio</mark> for scripting. It is a lightweight Lua IDE with code completion, syntax highlighting, live coding, code analyzer, and debugging support <a href="https://studio.zerobrane.com/support">Download</a>
+        We recommend <a href="https://studio.zerobrane.com/support">ZeroBrane Studio</a> for scripting. It is a lightweight Lua IDE with code completion, syntax highlighting, live coding, 
+        code analyzer, and debugging support.
     </p>
     <br>    
     <hr>
      Questions? - <a href="https://github.com/bt-maps">contact me</a>
-    <br>    
-    <hr>
-    <img src="concept1.png" alt="high level app diagram">
-    <br>    
+     <br>
+   
 
 </body>
